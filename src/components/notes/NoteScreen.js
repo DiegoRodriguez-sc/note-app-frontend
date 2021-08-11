@@ -5,7 +5,7 @@ import { useForm } from "../../hooks/useForm";
 import NoteAppBar from "./NoteAppBar";
 import "../../styles/note-screen.css";
 import { useRef } from "react";
-import { noteActive } from "../../actions/note";
+import { noteActive, startDeleteNote } from "../../actions/note";
 
 const NoteScreen = () => {
 
@@ -27,6 +27,10 @@ const NoteScreen = () => {
     dispatch(noteActive(formValues.id,{...formValues}));
   }, [dispatch, formValues]);
 
+  const handleDeleteNote = () => {
+    dispatch(startDeleteNote());
+  }
+
   return (
    <Fragment>
       <NoteAppBar />
@@ -38,6 +42,7 @@ const NoteScreen = () => {
               id="floatingTitle"
               name="title"
               placeholder="Title"
+              autoComplete="off"
               value={title}
               onChange={handleInputChange}
             />
@@ -61,7 +66,10 @@ const NoteScreen = () => {
             alt=""
           />
           <div className="d-grid footer mt-auto">
-            <div className="container text-center btn btn-danger">Delete</div>
+            <div 
+              className="container text-center btn btn-danger"
+              onClick={handleDeleteNote}
+              >Delete</div>
           </div>
         </div>
     </Fragment>

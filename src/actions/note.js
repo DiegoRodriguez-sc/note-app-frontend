@@ -92,4 +92,25 @@ export const refreshNote = (id, note) => ({
             ...note
         }
     }
+});
+
+// delete nota
+
+export const startDeleteNote = () => {
+    return async(dispatch, getState) => {
+        const {active } = getState().note;
+        const resp = await fetchConToken(`note/${active.id}`, {}, "DELETE");
+        const body = await resp.json();
+        if(body.status){
+            console.log(body.msg);
+            dispatch(deleteNote(active.id));
+        }else{
+            console.log(body);
+        }
+    };
+};
+
+const deleteNote = (id) => ({
+    type:types.notesDelete,
+    payload:id
 })
