@@ -1,0 +1,14 @@
+html,
+body {
+  height: 100%;
+}
+::-webkit-scrollbar {
+  /* display: none; */
+  -webkit-appearance: none;
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(58, 57, 57);
+  border-radius: 100px;
+}
