@@ -1,4 +1,5 @@
 import { fetchConToken } from "../helpers/fetch";
+import { uploadImage } from "../helpers/uploadImage";
 import { types } from "../types/types";
 
 
@@ -9,7 +10,8 @@ export const startCreateNote = () => {
          const newNota = {
           title:"",
           body:"",
-          date:new Date().getTime()
+          date:new Date().getTime(),
+          img:""
          }
 
          const resp = await fetchConToken("note/", newNota, "POST");
@@ -114,3 +116,15 @@ const deleteNote = (id) => ({
     type:types.notesDelete,
     payload:id
 })
+
+
+export const startUploadImages = (file) => {
+    return async(dispatch, getState) =>{
+      
+      const {active} = getState().note;
+      const data = await uploadImage(file);
+      active.img = data;
+      dispatch(startUpdateNotes());
+      
+    };
+};

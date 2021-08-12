@@ -1,7 +1,7 @@
 import moment from "moment";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { startUpdateNotes } from "../../actions/note";
+import { startUpdateNotes, startUploadImages } from "../../actions/note";
 
 const NoteAppBar = () => {
   const {active} = useSelector(state => state.note);
@@ -12,6 +12,17 @@ const NoteAppBar = () => {
    }
   
    const dateActive = moment(active.date);
+
+  const  handleImages = () => {
+     document.querySelector("#fileUpload").click();
+  } 
+
+  const handleUploadImg = (e) => {
+    const file = e.target.files[0];
+    if(file){
+      dispatch(startUploadImages(file));
+    }
+  } 
 
   return (
     <nav className=" navbar-dark d-flex bg-success rounded-3 p-1">
@@ -27,7 +38,17 @@ const NoteAppBar = () => {
       <div className="container-fluid  d-flex d-flex justify-content-between">
         <h4 className="navbar-brand">{dateActive.format("LL")}</h4>
         <div>
-          <button className="btn btn-outline-light me-2">Picture</button>
+          <input 
+            type="file" 
+            id="fileUpload"
+            name="file"
+            style={{display:"none"}}
+            onChange={handleUploadImg}
+          />
+          <button 
+            className="btn btn-outline-light me-2"
+            onClick={handleImages}
+            >Picture</button>
           <button 
             className="btn btn-outline-light"
             onClick={handleUpdateNote}

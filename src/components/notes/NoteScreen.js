@@ -60,11 +60,14 @@ const NoteScreen = () => {
             ></textarea>
             <label htmlFor="floatingTextarea">What happened today?</label>
           </div>
-          <img
-            className="img-thumbnail"
-            src="https://imgcomfort.com/Userfiles/Upload/images/illustration-geiranger.jpg"
-            alt=""
-          />
+          {
+            active.img 
+              && <img
+                className="img-thumbnail"
+                src={`${active.img}`}
+                alt=""
+              />
+          }
           <div className="d-grid footer mt-auto">
             <div 
               className="container text-center btn btn-danger"

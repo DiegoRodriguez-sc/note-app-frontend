@@ -5,7 +5,7 @@ import { noteActive } from "../../actions/note";
 
 const JournalEntry = ({uid, ...note}) => {
 
-  const {title, body, date, url} = note;
+  const {title, body, date, img} = note;
   const noteDate = moment(date); 
 
   const dispatch = useDispatch();
@@ -22,13 +22,13 @@ const JournalEntry = ({uid, ...note}) => {
       style={{height:"70px",width:"100%", border:"1px solid black", cursor:"pointer"}}
       onClick={handleActiveNote}
       >
-      {url && <div
+      {img && <div
         className="img-fluid"
         style={{
           backgroundSize: "cover",
           backgroundRepeat:"no-repeat",
-          backgroundImage: `url(${url})`,
-          width:"150px"
+          backgroundImage: `url(${img})`,
+          width:"90px"
         }}
       ></div>}
 
