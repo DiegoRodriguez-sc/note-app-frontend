@@ -17,7 +17,7 @@ Note App Backend: [https://github.com/DiegoRodriguez-sc/note-app-backend](https:
 
 ## Live demo 🔴
 
-Sitio Web - []().
+Sitio Web - [note app](https://note-app-frontend.netlify.app/).
 
 
 ## Getting Started 🚀

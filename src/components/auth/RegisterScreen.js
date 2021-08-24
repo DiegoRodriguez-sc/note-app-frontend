@@ -8,10 +8,10 @@ const RegisterScreen = ({history}) => {
 
 
   const initialForm = {
-    name:"nando",
-    email: "log@log.com",
-    password:"123456",
-    password2:"123456"
+    name:"",
+    email: "",
+    password:"",
+    password2:""
   };
 
   const [ formValues, handleInputChange ] = useForm( initialForm );
