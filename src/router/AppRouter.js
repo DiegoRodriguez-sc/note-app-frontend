@@ -13,6 +13,8 @@ import AuthRouter from './AuthRouter';
 import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
 
+import "../styles/loading.css"
+
 const AppRouter = () => {
 
   const dispatch = useDispatch();
@@ -31,7 +33,9 @@ const AppRouter = () => {
 
   if(checking){
     return (
-      <div> espere...</div>
+      <div className="loading">
+      <div className="lds-ripple"><div></div><div></div></div>
+      </div>
     )
   }
 

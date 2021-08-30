@@ -21,6 +21,7 @@ const JournalEntry = ({uid, ...note}) => {
       className="d-flex justify-content-between mb-3 overflow-hidden p-1" 
       style={{height:"70px",width:"100%", border:"1px solid black", cursor:"pointer"}}
       onClick={handleActiveNote}
+      data-bs-dismiss="offcanvas"
       >
       {img && <div
         className="img-fluid"

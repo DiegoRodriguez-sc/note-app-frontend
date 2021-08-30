@@ -33,7 +33,7 @@ const NoteAppBar = () => {
         data-bs-target="#offcanvasWithBackdrop"
         aria-controls="offcanvasWithBackdrop"
       >
-        <i className="fas fa-sliders-h"></i>
+       <i className="fas fa-bars"></i>
       </button>
       <div className="container-fluid  d-flex d-flex justify-content-between">
         <h4 className="navbar-brand">{dateActive.format("LL")}</h4>
@@ -50,7 +50,7 @@ const NoteAppBar = () => {
             onClick={handleImages}
             >Picture</button>
           <button 
-            className="btn btn-outline-light"
+            className="btn btn-outline-light "
             onClick={handleUpdateNote}
             >
             Save</button>

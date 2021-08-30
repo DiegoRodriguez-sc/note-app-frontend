@@ -59,7 +59,9 @@ const SideBar = () => {
         ></button>
       </div>
 
-      <div className="text-center mt-4" onClick={handleCreateNote} style={{cursor:"pointer"}}>
+      <div className="text-center mt-4" onClick={handleCreateNote} style={{cursor:"pointer"}}
+      data-bs-dismiss="offcanvas"
+      >
         <i className="far fa-calendar-plus fa-5x"></i>
         <p className="mt-5">New entry</p>
       </div>
